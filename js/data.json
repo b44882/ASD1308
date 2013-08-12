@@ -1,0 +1,36 @@
+
+		"exercise1": {
+				"name":    "Jogging",
+				"burn":    "300",
+				"type":    "Cardio",
+				"length":  "30",
+				"measure": "minutes"
+		},
+		"exercise2": {
+				"name":    "Weights",
+				"burn":    "333",
+				"type":    "Arms",
+				"length":  "5",
+				"measure": "reps of 6 lifts"
+		},
+		"exercise3": {
+				"name":    "Kicks",
+				"burn":    "222",
+				"type":    "Legs",
+				"length":  "100",
+				"measure": "high kicks"
+		},
+		"exercise4": {
+				"name":    "Sit Ups",
+				"burn":    "111",
+				"type":    "Core",
+				"length":  "50",
+				"measure": "sit ups"
+		},
+		"exercise5": {
+				"name":    "Boxing",
+				"burn":    "444",
+				"type":    "Arms",
+				"length":  "40",
+				"measure": "minutes"
+		},
