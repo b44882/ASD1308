@@ -1,9 +1,21 @@
 .quest_text{
 	font-size:12px;
 }
-.ui-grid-a .ui-block-a { 
+
+#namecal {
+	margin-top:-1.5em;
+}
+
+#namecal .ui-grid-a .ui-block-a { 
+	width: 60% 
+}
+#namecal .ui-grid-a .ui-block-b { 
+	width: 40%; 
+} 
+
+#lenmea .ui-grid-a .ui-block-a { 
 	width: 30% 
 }
-.ui-grid-a .ui-block-b { 
+#lenmea .ui-grid-a .ui-block-b { 
 	width: 70%; 
 } 
