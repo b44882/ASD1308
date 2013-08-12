@@ -1,4 +1,4 @@
-
+{
 		"exercise1": {
 				"name":    "Jogging",
 				"burn":    "300",
@@ -33,4 +33,5 @@
 				"type":    "Arms",
 				"length":  "40",
 				"measure": "minutes"
-		},
+		}
+}
