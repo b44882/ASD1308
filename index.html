@@ -11,7 +11,7 @@
 		<meta name="MobileOptimized" content="320"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="cleartype" content="on">
-		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+		<link rel="stylesheet" href="css/jquery.mobile.structure-1.3.2.min.css" />
 		<link rel="stylesheet" href="css/style.css" type="text/css" />
 		
 		<!-- Page Title -->
@@ -62,7 +62,7 @@
 		</header>
 		
 		<section data-role="content">
-			<form>
+			<form id="exeform">
 				<div data-role="fieldcontain" id="namecal">
 					<div class="ui-grid-a">
 						<div class="ui-block-a">
@@ -73,8 +73,8 @@
 						</div>
 						<div class="ui-block-b">
 							<div data-role="fieldcontain">
-								<label for="cals" style="font-size:12px">Calories Burned:</label>
-								<input name="cals" id="cals" placeholder="300" value="" data-mini="true"></input>
+								<label for="burned" style="font-size:12px">Calories Burned:</label>
+								<input name="burned" id="burned" placeholder="300" value="" data-mini="true"></input>
 							</div>
 						</div>
 					</div>
@@ -82,10 +82,10 @@
 				<div data-role="fieldcontain">
 					<label for="type" style="font-size:12px">Type:</label>
 					<select id="type" name="type" data-native-menu="false" data-mini="true">
-						<option value="cardio">Cardio</option>
-						<option value="arms">Arms</option>
-						<option value="legs">Legs</option>
-						<option value="core">Core</option>
+						<option value="Cardio">Cardio</option>
+						<option value="Arms">Arms</option>
+						<option value="Legs">Legs</option>
+						<option value="Core">Core</option>
 					</select>
 				</div>
 				<div data-role="fieldcontain" id="lenmea">
@@ -104,7 +104,7 @@
 						</div>
 					</div>
 				</div>
-				<input type="submit" value="Create!" data-theme="e" data-inline="true"/>
+				<input type="submit" value="Create!" data-theme="c" data-inline="true"/>
 				<input type="reset" value="Reset" data-theme="b" data-inline="true" data-mini="true"/>
 			</form>
 		</section>
@@ -190,8 +190,9 @@
 	</section> 
 
 	
-		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-		<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+		<script src="js/jquery-1.10.2.min.js"></script>
+		<script src="js/jquery.mobile-1.3.2.min.js"></script>
+		<script src="js/libs/jquery.validate.min.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>
 	

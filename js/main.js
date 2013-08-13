@@ -48,7 +48,55 @@ $(function(){
 		});
 	
 	});
+	
+	$('#home').on('pageinit', function(){
+
+	});	
+	
+	$('#create').on('pageinit', function(){
+
+		var myForm = $("#exeform");
+		myForm.validate({
+			rules: {
+				name: "required",
+				burned: "required",
+				type: "required",
+				length: "required",
+				measure: "required"
+			},
+			messages: {
+				name: "Please specify a name.",
+				burned: "Please specify calories burned.",
+				type: "Please select a type.",
+				length: "Please specify exercise's length.",
+				measure: "Please specify exercise's measurement."
+			},
+			invalidHandler: function(form, validator) {
+				alert("There are empty fields.  Please fill all fields.");
+			},
+			submitHandler: function() {
+				var data = myForm.serializeArray();
+				storeData(data);
+			}
+		});
+	});
+	
+	var storeData = function(data){
+	console.log(data);
+	var id = Math.floor(Math.random()*1000000000000000001);
+	var exercise       = {};
+		exercise.name  = ["Exercise:", data[0].value];
+		exercise.burned  = ["Cals Burned:", data[1].value];
+		exercise.type = ["Type:", data[2].value];
+		exercise.measure  = ["Measurement:", data[3].value + " " + data[4].value];
+		localStorage.setItem(id, JSON.stringify(exercise));
+		alert("Exercise Saved!");
+		window.location.reload();
+ 	
+	}; 
 });
+
+
 
 
         
