@@ -65,11 +65,11 @@ $(function(){
 				measure: "required"
 			},
 			messages: {
-				name: "Please specify a name.",
-				burned: "Please specify calories burned.",
-				type: "Please select a type.",
-				length: "Please specify exercise's length.",
-				measure: "Please specify exercise's measurement."
+				name: "",
+				burned: "",
+				type: "",
+				length: "",
+				measure: ""
 			},
 			invalidHandler: function(form, validator) {
 				alert("There are empty fields.  Please fill all fields.");
@@ -77,6 +77,9 @@ $(function(){
 			submitHandler: function() {
 				var data = myForm.serializeArray();
 				storeData(data);
+				$('#exeform').each(function() {
+            		this.reset();
+        		});
 			}
 		});
 	});
@@ -91,8 +94,6 @@ $(function(){
 		exercise.measure  = ["Measurement:", data[3].value + " " + data[4].value];
 		localStorage.setItem(id, JSON.stringify(exercise));
 		alert("Exercise Saved!");
-		window.location.reload();
- 	
 	}; 
 });
 
