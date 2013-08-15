@@ -11,8 +11,8 @@ $(function(){
 			  '<p class="ui-li-desc">' + 'Calories Burned: ' + obj.burn + '</p>' +
 			  '<p class="ui-li-desc">' + 'Type: ' + obj.type + '</p>' +
 			  '<p class="ui-li-desc">' + 'Measurement: ' + obj.length + ' ' + obj.measure + '</p>' +
-			  '<a href="#" class="delete_ex" id="'+key+'"> Delete Exercise </a>' + ' ' +
-			  '<a href="#create" class="edit_ex" id="'+key+'"> Edit Exercise </a>').appendTo("#storage");
+			  '<a href="#" class="delete_ex" data-key="'+key+'"> Delete Exercise </a>' + ' ' +
+			  '<a href="#create" class="edit_ex" data-key="'+key+'"> Edit Exercise </a>').appendTo("#storage");
 		}
 	}
 	
@@ -126,15 +126,14 @@ $(function(){
 	$(".delete_ex").on("click",function(){
 		console.log(this.id);
 		if(confirm("Are you sure you want to delete this exercise?")){
-			var itemKey = this.id
-			console.log(itemKey);
+			var itemKey = $(this).data('key');
 			localStorage.removeItem(itemKey);
 			window.location.reload();
 		}
 	});
 	
 	$(".edit_ex").on("click", function(){
-		var key = this.id;
+		var key = $(this).data('key');
 		validate(key);
 	});
 	
@@ -157,38 +156,6 @@ $(function(){
 		alert("Exercise Saved!");
 	};
 	
-	var editData = function(){
-		returnChimera();
-		var editNav = {};
-		    editNav.display = document.getElementById("display");
-		    editNav.clear   = document.getElementById("clear");
-		    editNav.saveChim = document.getElementById("saveChim");
-		    editNav.saveCancel = document.getElementById("saveCancel");
-		    editNav.create = document.getElementById("create");
-		    editNav.display.setAttribute("class", "hidden");
-		    editNav.clear.setAttribute("class", "hidden");
-		    editNav.saveChim.removeAttribute("class", "hidden");
-		    editNav.saveCancel.removeAttribute("class", "hidden");
-		    editNav.create.setAttribute("class", "hidden");
-		var value = localStorage.getItem(this.key);
-		var json = JSON.parse(value);
-		cName.value  = json.name[1];
-		cLevel.value = json.level[1];
-		cType.value  = json.type[1];
-		cDesc.value  = json.desc[1];
-		cDate.value  = json.date[1];
-		if(json.fly[1] === "Yes"){
-			cFly.checked = true;
-		};
-		if(json.swim[1] === "Yes"){
-			cSwim.checked = true;
-		};
-		if(json.run[1]  === "Yes"){
-			cRun.checked = true;
-		};
-		displayLevel();
-		saveChim.key = this.key
-	};
 
 });
 
