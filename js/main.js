@@ -1,3 +1,5 @@
+//js
+
 $(function(){
 
 	$("#get_json").on("click", function(){
